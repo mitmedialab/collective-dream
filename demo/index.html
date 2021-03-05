@@ -1,0 +1,42 @@
+<html>
+<body>
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
+<form class="pure-form">
+    <textarea class="pure-input-1-2" id="imagename"  cols="60" rows="10"/>I find myself on a beach, with many beachfront mansions nearby. My friends and I decide we all need to throw a party later that night and so we do. </textarea>
+    
+    <input type="submit" id="btn" value="GO" />
+</form>
+    <script type="text/javascript">
+        document.getElementById('btn').onclick = function() {
+            var val = document.getElementById('imagename').value;
+            val = val.replace(/[^\w\s]/gi, '');
+            console.log(val);
+            
+            
+            var src = 'http://dream.us-east-1.elasticbeanstalk.com/' + val +'.png';
+            var img = document.createElement('img'); 
+            img.src = src;
+            document.body.appendChild(img);
+            document.body.appendChild (document.createTextNode (" "));
+			document.body.appendChild (document.createElement ("span"));
+            
+            var src = 'http://dream.us-east-1.elasticbeanstalk.com/' + val +'.jpeg';
+            var img = document.createElement('img');
+            img.src = src;
+            document.body.appendChild(img);
+			document.body.appendChild(document.createTextNode (" "));
+			document.body.appendChild(document.createElement ("span"));
+            
+            
+            
+            var src = 'http://dream.us-east-1.elasticbeanstalk.com/' + val +'.gif';
+            var img = document.createElement('img');
+            
+            img.src = src;
+            document.body.appendChild(img);
+        }
+    </script>
+</body>
+</html>
+
+
